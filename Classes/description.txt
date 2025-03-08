@@ -1,0 +1,43 @@
+Let the adventure begin!
+
+In the lands of Goataria, Goats and Sheeps are fighting since the dawn of time to dominate the kingdom. Will you, mighty adventurer, be able to change the destiny of the world?
+
+[b]Any question or problem to use this mod? [url=http://steamcommunity.com/sharedfiles/filedetails/?id=314929396]Click here to read the FAQ.[/url][/b]
+
+[b]FEATURES[/b]
+- RPGoat: You have a player name and a life bar.
+- MMO Goat: MMO Goats and Sheeps will spawn randomly.
+
+[b]CHARACTERISTICS[/b]
+[h1]RPGoat[/h1]
+- Your name and life bar are displayed on top of your head.
+- Explosions, fire and attacks can hurt you.
+- You also take damages from brutal accelerations or decelerations.
+- Attacking living creatures will heal you.
+- When you die, you will respawn automatically after a few seconds.
+[h1]MMO Goat[/h1]
+- MMO Goat and Sheeps (MMONPCs) will randomly spawn around every player.
+- MMONPCs behave exactly as on the MMO map, they attack each other and Sheeps will attack you.
+- MMONPCs will despawn if they are too far from all the players.
+- You can change the number of MMONPCs spawned near you using the following console commands:
+-- SetMMOGoatSpawnCount newCount => Set the MMO Goats spawn count to newCount.
+-- SetMMOSheepSpawnCount newCount=> Set the MMO Sheeps spawn count to newCount.
+-- ShowMMOGoatSpawnCount => Display how many MMO Goats are currently spawning.
+-- ShowMMOSheepSpawnCount=> Display how many MMO Sheeps are currently spawning.
+-- ResetMMOGoatSpawnCount => Set the MMO Goats spawn count to the default value (20).
+-- ResetMMOSheepSpawnCount=> Set the MMO Sheeps spawn count to the default value (20).
+
+[b]EASTER EGGS[/b]
+- [spoiler]You can use the following console command to rename players using RPGoat:[/spoiler][spoiler]RenamePlayer playerID newName[/spoiler]
+
+[b]KNOWN BUGS[/b]
+- Sometimes the game will crash when you try to come back to the start a new map after using MMO Goat.
+- If you move too fast when using MMO Goat you may encounter some lag spikes.
+- If your game lag too much with MMO Goat, try to use the console commands to reduce the number of MMONPCs spawned.
+
+[b]DEV NOTES[/b]
+[quote=About this mod]This mod have been requested since the MMO map update came out ^^ Everyone wanted a life bar on his goat :p
+I delayed this mod a lot because I couldn't find a way to display the life bar correctly on the screen... Anyway, after copy-pasting a huge part of the code of the MMO update I finally made it work :D
+After that, I had to make it possible for the goat to be damaged. Hopefully some event in the game (explosions and the player attacks) already use the correct functions to make damages so I only had to scale the damage value correctly for them. Anyway most of the things that would obviously hurt you (fire, enemy attacks) had no effect at all so I had to make my own code to make them affect the goat. For the fire I added a 1 damage per second effect, for vehicles hurting you I added some damages depending on se speed of the vehicle, and for the rest I created the acceleration damages.
+The main reason behind this last solution is that there was no way to detect enemy attacks as they are not triggering any function I can see from a mutator class... So detecting the acceleration when you get hurt by an attack sounded like a good idea :) I had to configure it precisely to avoid that you take damages from a simple jump, but after doing it the result was really cool because a side effect of this damage detection was to automatically add fall damages and speed collision damages.
+[/quote]
